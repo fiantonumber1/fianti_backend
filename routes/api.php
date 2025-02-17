@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DiagnosisResultController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\OpenAIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,10 @@ Route::post('diagnosis-results', [DiagnosisResultController::class, 'store']);
 Route::get('diagnosis-results/{id}', [DiagnosisResultController::class, 'show']);
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/articles/{id}', [ArticleController::class, 'show']);
+
+
+
+Route::post('/check-doctor-validity', [OpenAIController::class, 'checkDoctorValidity']);
+
 
 
