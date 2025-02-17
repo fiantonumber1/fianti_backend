@@ -23,7 +23,6 @@ class AppointmentController extends Controller
         $validator = Validator::make($request->all(), [
             'doctor_id' => 'required|exists:doctor_databases,id',
             'user_id' => 'required|exists:users,id',
-            'patient_name' => 'required|string|max:255',
             'appointment_time' => 'required|date|after:now',
             'notes' => 'nullable|string',
         ]);
@@ -45,7 +44,6 @@ class AppointmentController extends Controller
         $appointment = Appointment::create([
             'doctor_id' => $request->doctor_id,
             'user_id' => $request->user_id,
-            'patient_name' => $request->patient_name,
             'appointment_time' => $request->appointment_time,
             'notes' => $request->notes,
         ]);
