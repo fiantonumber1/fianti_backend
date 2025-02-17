@@ -1,0 +1,5 @@
+Project Jobticket
+
+Flowchart = https://drive.google.com/file/d/1FGuLOTBywasHXvVRgJj0C2y_2e_Fy_Es/view?usp=sharing
+
+ERD       = https://drive.google.com/file/d/1TBauOZ1r6HwmLlEVIEHT0OmU5QD2JQma/view?usp=sharing
