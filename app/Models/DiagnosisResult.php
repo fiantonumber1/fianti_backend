@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DiagnosisResult extends Model
 {
     protected $fillable = [
+        'image_path',
         'user_id',
         'svm_prediction',
         'naive_bayes_prediction',
