@@ -50,10 +50,11 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Login berhasil!',
             'token' => $token,
-            'name' => $user->name,
-            'id' => $user->id,
+            'id' => (int) $user->id,       // Pastikan ID dikembalikan dalam bentuk integer
+            'name' => $user->name,        // Mengembalikan nama pengguna
         ], 200);
     }
+
 
     // LOGOUT
     public function logout(Request $request)
