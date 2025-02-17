@@ -30,11 +30,16 @@ class DiagnosisResultController extends Controller
         ], 201);
     }
 
-    public function show($id)
-    {
-        $diagnosisResult = DiagnosisResult::with('user')->findOrFail($id);
+    public function show($userId)
+{
+    $diagnosisResults = DiagnosisResult::where('user_id', $userId)
+        ->with('user') // Including the user data as well
+        ->get();
 
-        return response()->json($diagnosisResult);
-    }
+    return response()->json([
+        'data' => $diagnosisResults
+    ]);
+}
+
 }
 
