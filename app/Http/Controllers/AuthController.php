@@ -13,21 +13,28 @@ class AuthController extends Controller
     // REGISTER
     public function register(Request $request)
     {
+        // Validasi input
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
         ]);
 
+        // Membuat user baru
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
+        // Membuat token
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        // Mengirimkan response dengan token
         return response()->json([
             'message' => 'Registrasi berhasil, silakan login!',
-            'user' => $user
+            'user' => $user,
+            'token' => $token,  // Menambahkan token di response
         ], 201);
     }
 
