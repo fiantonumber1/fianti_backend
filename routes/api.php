@@ -32,13 +32,7 @@ Route::post('diagnosis-results', [DiagnosisResultController::class, 'store']);
 Route::get('diagnosis-results/{id}', [DiagnosisResultController::class, 'show']);
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/articles/{id}', [ArticleController::class, 'show']);
-
-
-
 Route::post('/check-doctor-validity', [OpenAIController::class, 'checkDoctorValidity']);
-
-
-
 Route::post('appointments/create', [AppointmentController::class, 'createAppointment']);
 Route::get('appointments/user/{user_id}', [AppointmentController::class, 'getUserAppointments']);
 Route::get('appointments/doctor/{doctor_id}', [AppointmentController::class, 'getDoctorAppointments']);
