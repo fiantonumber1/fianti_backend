@@ -24,7 +24,8 @@ class User extends Authenticatable
         'email',
         'password',
         'rule',
-        'waphonenumber'
+        'waphonenumber',
+        'is_verified'
     ];
 
     /**
