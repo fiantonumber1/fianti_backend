@@ -12,7 +12,7 @@ class VerificationController extends Controller
         // Validasi input
         $request->validate([
             'user_id' => 'required|exists:users,id',
-            'is_verified' => 'required|boolean',
+            'isverified' => 'required|boolean',
         ]);
 
         // Ambil user berdasarkan ID
@@ -23,14 +23,14 @@ class VerificationController extends Controller
         }
 
         // Update status is_verified
-        $user->is_verified = $request->is_verified;
+        $user->isverified = $request->isverified;
         $user->save();
 
         return response()->json([
             'message' => 'User verification updated successfully',
             'user' => [
                 'id' => $user->id,
-                'is_verified' => $user->is_verified
+                'isverified' => $user->is_verified
             ]
         ], 200);
     }
