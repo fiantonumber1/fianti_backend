@@ -44,7 +44,7 @@ Route::get('appointments/user/{user_id}', [AppointmentController::class, 'getUse
 Route::get('appointments/doctor/{doctor_id}', [AppointmentController::class, 'getDoctorAppointments']);
 Route::delete('appointments/delete/{appointment_id}', [AppointmentController::class, 'deleteAppointment']);
 Route::get('doctors', [AppointmentController::class, 'getAllDoctors']);
-Route::post('/update-verification', [AuthController::class, 'updateVerification']);
+
 Route::get('/update-verification', [VerificationController::class, 'updateVerification']);
 
 
