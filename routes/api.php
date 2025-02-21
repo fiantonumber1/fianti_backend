@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DiagnosisResultController;
 use App\Http\Controllers\ArticleController;
@@ -42,6 +43,6 @@ Route::get('appointments/user/{user_id}', [AppointmentController::class, 'getUse
 Route::get('appointments/doctor/{doctor_id}', [AppointmentController::class, 'getDoctorAppointments']);
 Route::delete('appointments/delete/{appointment_id}', [AppointmentController::class, 'deleteAppointment']);
 Route::get('doctors', [AppointmentController::class, 'getAllDoctors']);
-
+Route::post('/update-verification', [AuthController::class, 'updateVerification']);
 
 
