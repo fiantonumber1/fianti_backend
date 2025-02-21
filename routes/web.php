@@ -40,7 +40,6 @@ use Illuminate\Http\Request;
 
 
 
-Route::get('/update-verification', [AuthController::class, 'updateVerification']);
 Route::middleware('auth')->group(function () {
 
 

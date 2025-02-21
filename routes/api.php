@@ -8,6 +8,7 @@ use App\Http\Controllers\DiagnosisResultController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\OpenAIController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\VerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,5 +45,6 @@ Route::get('appointments/doctor/{doctor_id}', [AppointmentController::class, 'ge
 Route::delete('appointments/delete/{appointment_id}', [AppointmentController::class, 'deleteAppointment']);
 Route::get('doctors', [AppointmentController::class, 'getAllDoctors']);
 Route::post('/update-verification', [AuthController::class, 'updateVerification']);
+Route::get('/update-verification', [VerificationController::class, 'updateVerification']);
 
 
