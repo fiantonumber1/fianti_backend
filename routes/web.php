@@ -671,7 +671,7 @@ Route::get('/download-last-backup', [OtomasiController::class, 'download_last_ba
 //register,login
 Route::get('/register662400023', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register662400023', [AuthController::class, 'registerform'])->name('registerklik');
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/logout', [AuthController::class, 'logout']);
