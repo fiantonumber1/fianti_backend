@@ -10,9 +10,7 @@ class DiagnosisResult extends Model
     protected $fillable = [
         'image_path',
         'user_id',
-        'svm_prediction',
-        'naive_bayes_prediction',
-        'final_diagnosis',
+        'cnn_prediction',
     ];
 
     public function user()

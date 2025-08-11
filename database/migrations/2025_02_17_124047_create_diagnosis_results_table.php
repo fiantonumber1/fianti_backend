@@ -13,9 +13,8 @@ return new class extends Migration {
         Schema::create('diagnosis_results', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Relate to the user
-            $table->string('svm_prediction');
-            $table->string('naive_bayes_prediction');
-            $table->string('final_diagnosis');
+            $table->string('cnn_prediction');
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }
